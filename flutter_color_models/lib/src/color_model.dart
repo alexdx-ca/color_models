@@ -26,28 +26,6 @@ export 'models/xyz_color.dart';
 /// {@macro color_models.ColorModel}
 @immutable
 abstract class ColorModel implements cm.ColorModel, Color {
-  @override
-  double get a => opacity;
-  @override
-  double get r => red / 255.0;
-  @override
-  double get g => green / 255.0;
-  @override
-  double get b => blue / 255.0;
-  @override
-  ColorSpace get colorSpace => ColorSpace.sRGB;
-  @override
-  int toARGB32() => value;
-
-  @override
-  Color withValues({double? alpha, double? red, double? green, double? blue, ColorSpace? colorSpace}) {
-    return Color.fromARGB(
-      (alpha != null ? (alpha * 255).round() : this.alpha),
-      (red != null ? (red * 255).round() : this.red),
-      (green != null ? (green * 255).round() : this.green),
-      (blue != null ? (blue * 255).round() : this.blue),
-    );
-  }
 
   factory ColorModel(Color justUIColor) {
     return RgbColor.fromColor(justUIColor);
