@@ -178,7 +178,7 @@ class RgbColor extends cm.RgbColor
 
   /// Constructs a [RgbColor] from [color].
   factory RgbColor.fromColor(Color color) =>
-      RgbColor(color.r, color.g, color.b, color.alpha);
+      RgbColor(color.red, color.green, color.blue, color.alpha);
 
   /// {@macro color_models.RgbColor.fromHex}
   factory RgbColor.fromHex(String hex) => cm.RgbColor.fromHex(hex).cast();
