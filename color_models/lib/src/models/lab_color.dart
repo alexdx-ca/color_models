@@ -71,7 +71,7 @@ class LabColor extends ColorModel {
   @override
   bool get isMonochromatic =>
       ColorMath.round(chromaticityA) == 0 &&
-     ColorMath.round(chromaticityB) == 0;
+      ColorMath.round(chromaticityB) == 0;
 
   @override
   LabColor interpolate(ColorModel end, double step) {
@@ -97,9 +97,9 @@ class LabColor extends ColorModel {
   @override
   LabColor get inverted => LabColor(
       100 - lightness,
-     255 - (chromaticityA + 128) - 128,
-     255 - (chromaticityB + 128) - 128,
-     alpha);
+      255 - (chromaticityA + 128) - 128,
+      255 - (chromaticityB + 128) - 128,
+      alpha);
 
   @override
   LabColor get opposite => rotateHue(180);
@@ -188,15 +188,15 @@ class LabColor extends ColorModel {
   /// [chromaticityA], and [chromaticityB] values, in that order.
   @override
   List<num> toList() =>
-     List<num>.from(<num>[lightness, chromaticityA, chromaticityB],
-         growable: false);
+      List<num>.from(<num>[lightness, chromaticityA, chromaticityB],
+          growable: false);
 
   /// Returns a fixed-length list containing the [lightness],
   /// [chromaticityA], [chromaticityB], and [alpha] values, in that order.
   @override
   List<num> toListWithAlpha() =>
       List<num>.from(<num>[lightness, chromaticityA, chromaticityB, alpha],
-         growable: false);
+          growable: false);
 
   /// {@template color_models.LabColor.from}
   ///
@@ -301,7 +301,7 @@ class LabColor extends ColorModel {
 
   @override
   String toString() =>
-     'LabColor($lightness, $chromaticityA, $chromaticityB, $alpha)';
+      'LabColor($lightness, $chromaticityA, $chromaticityB, $alpha)';
 
   @override
   bool operator ==(Object other) =>
@@ -314,7 +314,7 @@ class LabColor extends ColorModel {
   @override
   int get hashCode =>
       lightness.hashCode ^
-     chromaticityA.hashCode ^
-     chromaticityB.hashCode ^
-     alpha.hashCode;
+      chromaticityA.hashCode ^
+      chromaticityB.hashCode ^
+      alpha.hashCode;
 }

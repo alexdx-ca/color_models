@@ -10,7 +10,6 @@ import 'helpers/cast_to_color.dart';
 class HsiColor extends cm.HsiColor
     with AsColor, RgbGetters, CastToColor
     implements ColorModel {
-
   /// {@macro color_models.HsiColor.constructor}
   const HsiColor(
     super.hue,

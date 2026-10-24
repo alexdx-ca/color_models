@@ -749,9 +749,9 @@ extension _LinearizeRgbColor on RgbColor {
   /// Converts this [RgbColor] to a linear RGB color.
   _LinearRgbColor linearize() => _LinearRgbColor.fromList(
         toFactoredList()
-            .map<double>((value) => value >= 0.0031308
-                ? (1.055 * math.pow(value, 1.0 / 2.4)) - 0.055
-                : 12.92 * value)
+            .map<double>((value) => value <= 0.04045
+                ? value / 12.92
+                : math.pow((value + 0.055) / 1.055, 2.4).toDouble())
             .toList(),
       );
 }
@@ -778,9 +778,9 @@ class _LinearRgbColor {
   /// Converts this linear RGB color back to a [RgbColor].
   RgbColor normalize() => RgbColor.fromList(
         toList()
-            .map<double>((value) => ((value >= 0.04045
-                        ? math.pow((value + 0.055) / 1.055, 2.4).toDouble()
-                        : value / 12.92) *
+            .map<double>((value) => ((value <= 0.0031308
+                        ? 12.92 * value
+                        : (1.055 * math.pow(value, 1.0 / 2.4)) - 0.055) *
                     255)
                 .clamp(0, 255))
             .toList(),

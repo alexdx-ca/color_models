@@ -10,7 +10,6 @@ import 'helpers/cast_to_color.dart';
 class HspColor extends cm.HspColor
     with AsColor, RgbGetters, CastToColor
     implements ColorModel {
-
   /// {@macro color_models.HspColor.constructor}
   const HspColor(
     super.hue,

@@ -10,7 +10,6 @@ import 'helpers/cast_to_color.dart';
 class CmykColor extends cm.CmykColor
     with AsColor, RgbGetters, CastToColor
     implements ColorModel {
-
   /// {@macro color_models.CmykColor.constructor}
   const CmykColor(
     super.cyan,

@@ -26,7 +26,6 @@ export 'models/xyz_color.dart';
 /// {@macro color_models.ColorModel}
 @immutable
 abstract class ColorModel implements cm.ColorModel, Color {
-
   factory ColorModel(Color justUIColor) {
     return RgbColor.fromColor(justUIColor);
   }

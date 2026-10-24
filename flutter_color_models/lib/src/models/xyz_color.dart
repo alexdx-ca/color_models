@@ -10,7 +10,6 @@ import 'helpers/cast_to_color.dart';
 class XyzColor extends cm.XyzColor
     with AsColor, RgbGetters, CastToColor
     implements ColorModel {
-
   /// /// {@macro color_models.XyzColor.constructor}
   const XyzColor(
     super.x,

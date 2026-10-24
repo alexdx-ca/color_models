@@ -10,7 +10,6 @@ import 'helpers/cast_to_color.dart';
 class LabColor extends cm.LabColor
     with AsColor, RgbGetters, CastToColor
     implements ColorModel {
-
   /// {@macro color_models.LabColor.constructor}
   const LabColor(
     super.lightness,

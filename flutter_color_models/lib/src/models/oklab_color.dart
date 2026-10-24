@@ -10,7 +10,6 @@ import 'helpers/cast_to_color.dart';
 class OklabColor extends cm.OklabColor
     with AsColor, RgbGetters, CastToColor
     implements ColorModel {
-
   /// {@macro color_models.OklabColor.constructor}
   const OklabColor(
     super.lightness,
